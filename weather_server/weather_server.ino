@@ -9,8 +9,8 @@ int lightLevel =4095;
 //light sensor
 // When using wifi, use pins 32 and above
 #define PIN_ANALOG_IN 34
-#define LIGHT_MIN 372
-#define LIGHT_MAX 2048
+#define LIGHT_MIN 0
+#define LIGHT_MAX 100
 
 
 // Set your access point network credentials
@@ -21,11 +21,11 @@ const char* password = "123456789";
 AsyncWebServer server(80);
 
 String get_temp_humid(){
-  //temp,humidity,lightlevel
+  //temp,humidity,lightlevel light 0 dark 4095
   //
-  int adcVal = analogRead(PIN_ANALOG_IN); //read adc
-  Serial.println(adcVal);
-//  float pwmVal = map(constrain(adcVal, LIGHT_MIN, LIGHT_MAX), LIGHT_MIN, LIGHT_MAX, 0, 4095);
+//  int adcVal = analogRead(PIN_ANALOG_IN); //read adc
+//  Serial.println(adcVal);
+  float pwmVal = map(constrain(lightLevel, LIGHT_MIN, LIGHT_MAX), LIGHT_MIN, LIGHT_MAX, 0, 4095);
   flag:TempAndHumidity nVals = dht.getTempAndHumidity();
   if (dht.getStatus() !=0){ goto flag;}
   return String(nVals.temperature)+","+String(nVals.humidity)+","+String(lightLevel);
@@ -56,6 +56,6 @@ void setup(){
 void loop(){
   delay(500);
   lightLevel = analogRead(PIN_ANALOG_IN);
-  Serial.println(analogRead(PIN_ANALOG_IN));
+//  Serial.println(analogRead(PIN_ANALOG_IN));
   
 }
