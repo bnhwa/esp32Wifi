@@ -24,7 +24,7 @@ String get_temp_humid(){
   //temp,humidity,lightlevel light 0 dark 4095
   //
 //  int adcVal = analogRead(PIN_ANALOG_IN); //read adc
-//  Serial.println(adcVal);
+  Serial.println("fuckoff");
   float pwmVal = map(constrain(lightLevel, LIGHT_MIN, LIGHT_MAX), LIGHT_MIN, LIGHT_MAX, 0, 4095);
   flag:TempAndHumidity nVals = dht.getTempAndHumidity();
   if (dht.getStatus() !=0){ goto flag;}
