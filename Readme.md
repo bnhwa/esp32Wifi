@@ -4,7 +4,7 @@
 
 ## <u>About</u>
 
-This project is meant to be an interactive generative wallpaper communicating with a wireless esp32-based weather station which on its server, allows client machines to read temperature, humidity, and light level values from it. The wallpaper itself (all of it which is procedurally generated) the weather and art itself on the wallpaper changes based on the values it retrieves from the esp32 weather station. [Here is the Github Repo link](https://github.com/bnhwa/esp32Wifi). On the Github page, you can find **the full technical details for installation and such.** This blog post is focused moreso on the artistic development process.
+This project is meant to be an interactive generative wallpaper communicating with a wireless esp32-based weather station which on its server, allows client machines to read temperature, humidity, and light level values from it. The wallpaper itself (all of it which is procedurally generated) the weather and art itself on the wallpaper changes based on the values it retrieves from the esp32 weather station. 
 
 Demo of the Generative art:
 
