@@ -70,4 +70,5 @@ Demo of the entire system:
 3. Once you successfully upload to the esp32 unit, a local wifi network (set up by defaut as ESP32-Access-Point") will appear. 
 4.  On the client machine, connect to that and enter the password (set default as 123456789) 
 5. To test if the server is working, go to a web browser to `http://192.168.4.1/dat` and it should return a page with the string of the temperature, humidity, and raw light level
-6. 
+6. Then, once the server is running, while connected to the esp32 wifi network, run `generative_weather.pde`. voila!
+
