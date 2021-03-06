@@ -357,6 +357,8 @@ class rainDrop {
       this.speed = map(this.z,0,20,4,10);
     
     }
+    //snow
+    if (temp<=0) this.speed *= 0.5;
 
   }
 
