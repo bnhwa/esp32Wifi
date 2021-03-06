@@ -8,7 +8,7 @@ int dhtPin = 19;
 int lightLevel =4095;
 //light sensor
 // When using wifi, use pins 32 and above
-#define PIN_ANALOG_IN 34
+#define PIN_ANALOG_IN 33
 #define LIGHT_MIN 0
 #define LIGHT_MAX 100
 

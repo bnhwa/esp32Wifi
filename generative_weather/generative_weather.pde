@@ -11,13 +11,13 @@ Clock clock;
 void setup(){
   fullScreen();
   //size(800,800);
-  float oppai = map(lightLevel,4095,320,0,1);
-  println(oppai);
-  String test1 = "22.0,13,15";
-  float[] l1 = float(split(test1,","));
-  println(l1[0]);
-  println(l1[1]);
-  println(l1[2]);
+  //float oppai = map(lightLevel,4095,320,0,1);
+  //println(oppai);
+  //String test1 = "22.0,13,15";
+  //float[] l1 = float(split(test1,","));
+  //println(l1[0]);
+  //println(l1[1]);
+  //println(l1[2]);
   abstractTree theTree;
   theTree = new abstractTree();
   theTree.init();
@@ -27,6 +27,7 @@ void setup(){
     rainDrop temp = new rainDrop();
     drops.add(temp);
   }
+  htmlReq();
 
   
 }
@@ -40,13 +41,10 @@ void draw(){
   //sky color gets darkest at midnight and brightest at noon
   clock.update();
 
-   if ((millis()-time) > 3000){//update every 3 seconds
-      this.time = millis();
-      String test1 = "22.0,50,15";
-      float[] l1 = float(split(test1,","));
-      temp = l1[0];
-      humidity=l1[1];
-      lightLevel=l1[2];
+   if ((millis()-time) > 2000){//update every 3 seconds
+   
+   htmlReq();
+
    }
    if (humidity>40){
       for (rainDrop r : drops) {
@@ -108,6 +106,7 @@ class abstractTree {
     image(this.leaves, 0, 0);
   }
   void keyPressed() {
+    demo = !demo;
   }
   void createTree( float x, float y, float bLength, float nBranches) {//if 250
     //tree.beginDraw();
@@ -218,7 +217,7 @@ class abstractTree {
 }
 class Leaf {
   float x;
-  float y;
+  float y;  
   float a;
   float pers;
   Leaf(float x, float y, float a) {
@@ -277,6 +276,8 @@ class Clock{
   void update(){
     fill(255*(1-clock.skyPct));
     //text(this.timeStr(),(width/40)+(width/2),(width/40)+ (height/10));
+    text("temp: "+str(temp),(width/40)+(width/2),(width/40)+ (height/10));
+    text("humidity: "+str(humidity),(width/40)+(width/2),(width/40)+ (height/10)*2);
     this.tree.display();
     if ((millis()-this.time) > 2000){
       this.time = millis();

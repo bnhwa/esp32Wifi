@@ -6,9 +6,9 @@
 
 This project is meant to be an interactive generative wallpaper communicating with a wireless esp32-based weather station which on its server, allows client machines to read temperature, humidity, and light level values from it. The wallpaper itself (all of it which is procedurally generated) the weather and art itself on the wallpaper changes based on the values it retrieves from the esp32 weather station. 
 
-Demo of the Generative art:
+Demo of the Generative art [here](https://youtu.be/ayzvFN80_Hg): 
 
-Demo of the entire system: 
+Demo of the entire system [here](https://www.youtube.com/watch?v=ug8GZp4KSXo&ab_channel=BaileyHwa):
 
 
 
@@ -63,10 +63,10 @@ Demo of the entire system:
 
    
 
-## <u>Running</u> (on any computer)
+## <u>Running</u>
 
 1. Connect the controller USB to the ESP32 unit
-2. Open the Arduino IDE, upload `Weather_server.ino` esp32 board
+2. Open the Arduino IDE, upload `Weather_server.ino` esp32 board, while pressing the "boot" button. Then press the "reset" button
 3. Once you successfully upload to the esp32 unit, a local wifi network (set up by defaut as ESP32-Access-Point") will appear. 
 4.  On the client machine, connect to that and enter the password (set default as 123456789) 
 5. To test if the server is working, go to a web browser to `http://192.168.4.1/dat` and it should return a page with the string of the temperature, humidity, and raw light level
